@@ -22,10 +22,12 @@ For data cleaning, I replaced the `0` values with `NA` for `rating` and `minutes
   frameborder="0"
 ></iframe>
 - The following grouped table shows the mean of the cooking time of two groups: recipes with less than 4 stars and those with 4 or 5 stars. This table indicates that recipes with less than 4 stars have slightly less cooking time, which means less cooking time may correlate with lower average rating. However, we can't say if this difference is statiscally important by only looking at the table.
+
 | With less than 4 stars | Cooking time (minutes) |
 |-------------------------|------------------------|
 | False                  | 102.586851            |
 | True                   | 96.884257             |
+
 ## Assessment of Missingness
 I believe the `review` column is NMAR. The reason is that if the user does not like the recipe and they know they would not say good words about the recipe, they may just leave the review blank. I believe the `average_rating` can explain the missingness because low rating means the user does not like the recipe, thereby making the missingness MAR.
 To examine the missingness of the `rating` column in the merged dataset, I ran permutation tests on the column to see if its missingness depends on column `minutes`, `n_ingredients`, and `n_steps`. The p-values are 0.062, 0.0, 0.0 respectively. This means the missingness of `rating` depends on `n_ingredients` and `n_steps`, but not `minutes`. Thus, `rating` is MAR depending on `n_ingredients` and `n_steps`, but not on `minutes`. This might indicate that cooking time does not correlate with `average_rating`, but `n_ingredients` and `n_steps` do.
