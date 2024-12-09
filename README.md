@@ -42,10 +42,10 @@ We can see that the two distributions are quite similar. When rating is not miss
   height="600"
   frameborder="0"
 ></iframe>
-
-
-
 ## Hypothesis Testing
+- Null: There is no significant positive relationship between cooking time and the average rating of recipes.
+- Alternative: Higher cooking time corresponds to a higher average rating of recipes.
+My choice of test statistic is the Pearson correlation. I believe this is a good choice becuase it measures the strength of the linear relationship between two variables. It has a value between -1 to 1, with a value of -1 meaning a total negative linear correlation, 0 being no correlation, and + 1 meaning a total positive correlation. I choose a significance level of 0.05 because it is the mostly commonly used one. The result p-value is 0.4919284282862534. Since it's greater than 0.05, we fail to reject that there is no significant positive relationship between cooking time and the average rating of recipes.
 ## Framing a Prediction Problem
 ## Baseline Model
 ## Final Model
