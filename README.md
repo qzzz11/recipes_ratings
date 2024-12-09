@@ -26,9 +26,25 @@ For data cleaning, I replaced the `0` values with `NA` for `rating` and `minutes
 |-------------------------|------------------------|
 | False                  | 102.586851            |
 | True                   | 96.884257             |
-
-
 ## Assessment of Missingness
+I believe the `review` column is NMAR. The reason is that if the user does not like the recipe and they know they would not say good words about the recipe, they may just leave the review blank. I believe the `average_rating` can explain the missingness because low rating means the user does not like the recipe, thereby making the missingness MAR.
+To examine the missingness of the `rating` column in the merged dataset, I ran permutation tests on the column to see if its missingness depends on column `minutes`, `n_ingredients`, and `n_steps`. The p-values are 0.062, 0.0, 0.0 respectively. This means the missingness of `rating` depends on `n_ingredients` and `n_steps`, but not `minutes`. Thus, `rating` is MAR depending on `n_ingredients` and `n_steps`, but not on `minutes`. This might indicate that cooking time does not correlate with `average_rating`, but `n_ingredients` and `n_steps` do.
+We can see that the two distributions are quite similar. When rating is not missing, `n_steps` is centered around smaller steps while it's more to the right when rating is missing.
+<iframe
+  src="assets/distribution_missing_rating.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+<iframe
+  src="assets/distribution_not_missing_rating.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+
+
 ## Hypothesis Testing
 ## Framing a Prediction Problem
 ## Baseline Model
