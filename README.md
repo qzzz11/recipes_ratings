@@ -22,7 +22,6 @@ For data cleaning, I replaced the `0` values with `NA` for `rating` and `minutes
   frameborder="0"
 ></iframe>
 - The following grouped table shows the mean of the cooking time of two groups: recipes with less than 4 stars and those with 4 or 5 stars. This table indicates that recipes with less than 4 stars have slightly less cooking time, which means less cooking time may correlate with lower average rating. However, we can't say if this difference is statiscally important by only looking at the table.
-
 | With less than 4 stars | Cooking time (minutes) |
 |-------------------------|------------------------|
 | False                  | 102.586851            |
